@@ -80,7 +80,7 @@ function parseDureeMinutes(duree) {
 
 function App() {
   const [sortBy, setSortBy] = useState('presse')
-  const [decennie, setDecennie] = useState('2020')
+  const [decennie, setDecennie] = useState('all')
   const [genreFilter, setGenreFilter] = useState('Tous')
   const [dureeFilter, setDureeFilter] = useState('Tous')
   const [paysFilter, setPaysFilter] = useState('Tous')
@@ -174,6 +174,8 @@ function App() {
               ))}
             </select>
           </label>
+        </div>
+        <div className="filter-row">
           <label className="filter-group">
             Pays :
             <select value={paysFilter} onChange={e => setPaysFilter(e.target.value)}>
