@@ -17,10 +17,8 @@ function StarRating({ note, max = 5 }) {
 }
 
 function FilmCard({ film, rank, sortBy, onPosterClick }) {
-  const displayRank = sortBy === 'tmdb' ? null : sortBy === 'presse' ? film.rang_presse : film.rang_spectateurs
   return (
     <div className="film-card">
-      <div className="rank">{displayRank ? `#${displayRank}` : '—'}</div>
       {film.poster && (
         <img
           src={film.poster}
