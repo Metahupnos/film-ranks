@@ -131,7 +131,6 @@ function App() {
           <span className="avatar-name">Kiki ©</span>
         </a>
         <h1>🎬 Movie Choice</h1>
-        <p className="subtitle">Classement Allociné — Presse, Spectateurs & TMDB</p>
         <input
           type="text"
           className="search-bar"
