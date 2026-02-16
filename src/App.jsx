@@ -143,32 +143,20 @@ function App() {
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
-        <div className="sort-bar">
+        <div className="filter-row">
           <span>Décennie :</span>
-          <button className={decennie === 'all' ? 'active' : ''} onClick={() => setDecennie('all')}>
-            Toutes
-          </button>
-          <button className={decennie === '2000' ? 'active' : ''} onClick={() => setDecennie('2000')}>
-            2000 — 2009
-          </button>
-          <button className={decennie === '2010' ? 'active' : ''} onClick={() => setDecennie('2010')}>
-            2010 — 2019
-          </button>
-          <button className={decennie === '2020' ? 'active' : ''} onClick={() => setDecennie('2020')}>
-            2020 — 2029
-          </button>
-        </div>
-        <div className="sort-bar">
-          <span>Trier par :</span>
-          <button className={sortBy === 'presse' ? 'active' : ''} onClick={() => setSortBy('presse')}>
-            Cote presse
-          </button>
-          <button className={sortBy === 'spectateurs' ? 'active' : ''} onClick={() => setSortBy('spectateurs')}>
-            Cote spectateurs
-          </button>
-          <button className={sortBy === 'tmdb' ? 'active' : ''} onClick={() => setSortBy('tmdb')}>
-            Cote TMDB
-          </button>
+          <select value={decennie} onChange={e => setDecennie(e.target.value)}>
+            <option value="all">Toutes</option>
+            <option value="2000">2000 — 2009</option>
+            <option value="2010">2010 — 2019</option>
+            <option value="2020">2020 — 2029</option>
+          </select>
+          <span className="filter-sep">Trier par :</span>
+          <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
+            <option value="presse">Cote presse</option>
+            <option value="spectateurs">Cote spectateurs</option>
+            <option value="tmdb">Cote TMDB</option>
+          </select>
         </div>
         <div className="filter-row">
           <span>Genre :</span>
