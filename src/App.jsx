@@ -134,7 +134,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <h1>🎬 Top Films</h1>
+        <h1>🎬 Film Ranks</h1>
         <p className="subtitle">Classement Allociné — Presse, Spectateurs & TMDB</p>
         <input
           type="text"
