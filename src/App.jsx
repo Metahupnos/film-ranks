@@ -130,7 +130,7 @@ function App() {
           <img src={`${import.meta.env.BASE_URL}krissy.jpeg`} alt="Kiki" className="avatar" />
           <span className="avatar-name">Kiki ©</span>
         </a>
-        <h1>🎬 Film Ranks</h1>
+        <h1>🎬 Movie Choice</h1>
         <p className="subtitle">Classement Allociné — Presse, Spectateurs & TMDB</p>
         <input
           type="text"
