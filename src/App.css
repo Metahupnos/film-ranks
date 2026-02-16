@@ -21,6 +21,7 @@ header {
   text-align: center;
   margin-bottom: 2rem;
   position: relative;
+  padding-right: 90px;
 }
 
 .avatar-link {
@@ -55,7 +56,7 @@ header {
 header h1 {
   font-size: 2rem;
   color: #febd01;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -66,7 +67,7 @@ header h1 {
 
 .search-bar {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   padding: 0.6rem 1rem;
   border: 1px solid #444;
   border-radius: 25px;
