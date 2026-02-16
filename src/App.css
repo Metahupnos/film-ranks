@@ -379,24 +379,41 @@ header h1 {
     font-size: 1.5rem;
   }
 
+  .subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
   .search-bar {
     font-size: 0.85rem;
     padding: 0.5rem 0.8rem;
+    margin-bottom: 0.6rem;
   }
 
+  /* Barres de boutons : labels au-dessus, boutons en dessous */
   .sort-bar {
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .sort-bar span {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: -0.1rem;
   }
 
   .sort-bar button {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
   }
 
+  /* Filtres Genre/Pays empiles */
   .filter-row {
-    flex-wrap: wrap;
-    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .filter-row .filter-sep {
@@ -404,34 +421,55 @@ header h1 {
   }
 
   .filter-row select {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.5rem;
-    max-width: 45%;
+    font-size: 0.82rem;
+    padding: 0.35rem 0.6rem;
+    width: 70%;
   }
 
+  /* Duree */
   .genre-bar {
-    gap: 0.3rem;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .genre-bar span {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
   }
 
   .genre-bar button {
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
   }
 
+  /* Cartes films */
   .film-card {
-    flex-wrap: wrap;
-    padding: 0.8rem;
-    gap: 0.6rem;
+    display: grid;
+    grid-template-columns: 35px 50px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem 0.6rem;
+    padding: 0.7rem;
+    align-items: start;
   }
 
   .rank {
     font-size: 1rem;
-    min-width: 30px;
+    min-width: unset;
+    grid-row: 1 / 3;
+    align-self: center;
   }
 
   .film-poster {
-    width: 45px;
-    height: 65px;
+    width: 50px;
+    height: 70px;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  .film-info {
+    grid-column: 3;
+    min-width: 0;
   }
 
   .film-title {
@@ -439,7 +477,8 @@ header h1 {
   }
 
   .film-meta {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
   }
 
   .film-actors {
@@ -447,12 +486,13 @@ header h1 {
   }
 
   .ratings {
-    flex-direction: column;
-    gap: 0.2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
   }
 
   .rating-label {
-    min-width: 55px;
+    min-width: unset;
     font-size: 0.68rem;
   }
 
@@ -461,10 +501,10 @@ header h1 {
   }
 
   .btn-ba {
-    width: 100%;
+    grid-column: 1 / -1;
     text-align: center;
     padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
   }
 
   .modal-poster {
