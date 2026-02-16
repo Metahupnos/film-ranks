@@ -174,20 +174,14 @@ function App() {
             ))}
           </select>
         </div>
-        <div className="genre-bar">
+        <div className="filter-row">
           <span>Durée :</span>
-          <button className={dureeFilter === 'Tous' ? 'active' : ''} onClick={() => setDureeFilter('Tous')}>
-            Tous
-          </button>
-          <button className={dureeFilter === 'court' ? 'active' : ''} onClick={() => setDureeFilter('court')}>
-            &lt; 1h40
-          </button>
-          <button className={dureeFilter === 'moyen' ? 'active' : ''} onClick={() => setDureeFilter('moyen')}>
-            1h40 — 2h
-          </button>
-          <button className={dureeFilter === 'long' ? 'active' : ''} onClick={() => setDureeFilter('long')}>
-            &gt; 2h
-          </button>
+          <select value={dureeFilter} onChange={e => setDureeFilter(e.target.value)}>
+            <option value="Tous">Tous</option>
+            <option value="court">&lt; 1h40</option>
+            <option value="moyen">1h40 — 2h</option>
+            <option value="long">&gt; 2h</option>
+          </select>
         </div>
       </header>
       <p className="result-count">{sorted.length} film{sorted.length > 1 ? 's' : ''}</p>

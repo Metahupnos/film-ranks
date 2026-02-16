@@ -390,57 +390,24 @@ header h1 {
     margin-bottom: 0.6rem;
   }
 
-  /* Barres de boutons : labels au-dessus, boutons en dessous */
-  .sort-bar {
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-  }
 
-  .sort-bar span {
-    width: 100%;
-    text-align: center;
-    font-size: 0.8rem;
-    margin-bottom: -0.1rem;
-  }
-
-  .sort-bar button {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.78rem;
-  }
-
-  /* Filtres Genre/Pays empiles */
   .filter-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.4rem;
+    justify-content: center;
+  }
+
+  .filter-row span {
+    font-size: 0.78rem;
   }
 
   .filter-row .filter-sep {
-    margin-left: 0;
+    margin-left: 0.3rem;
   }
 
   .filter-row select {
-    font-size: 0.82rem;
-    padding: 0.35rem 0.6rem;
-    width: 70%;
-  }
-
-  /* Duree */
-  .genre-bar {
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-  }
-
-  .genre-bar span {
-    width: 100%;
-    text-align: center;
     font-size: 0.8rem;
-  }
-
-  .genre-bar button {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.78rem;
+    padding: 0.3rem 0.4rem;
   }
 
   /* Cartes films */
