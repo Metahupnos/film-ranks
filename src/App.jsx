@@ -144,44 +144,52 @@ function App() {
           onChange={e => setSearch(e.target.value)}
         />
         <div className="filter-row">
-          <span>Décennie :</span>
-          <select value={decennie} onChange={e => setDecennie(e.target.value)}>
-            <option value="all">Toutes</option>
-            <option value="2000">2000 — 2009</option>
-            <option value="2010">2010 — 2019</option>
-            <option value="2020">2020 — 2029</option>
-          </select>
-          <span className="filter-sep">Trier par :</span>
-          <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
-            <option value="presse">Cote presse</option>
-            <option value="spectateurs">Cote spectateurs</option>
-            <option value="tmdb">Cote TMDB</option>
-          </select>
+          <label className="filter-group">
+            Décennie :
+            <select value={decennie} onChange={e => setDecennie(e.target.value)}>
+              <option value="all">Toutes</option>
+              <option value="2000">2000 — 2009</option>
+              <option value="2010">2010 — 2019</option>
+              <option value="2020">2020 — 2029</option>
+            </select>
+          </label>
+          <label className="filter-group">
+            Trier par :
+            <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
+              <option value="presse">Cote presse</option>
+              <option value="spectateurs">Cote spectateurs</option>
+              <option value="tmdb">Cote TMDB</option>
+            </select>
+          </label>
         </div>
         <div className="filter-row">
-          <span>Genre :</span>
-          <select value={genreFilter} onChange={e => setGenreFilter(e.target.value)}>
-            <option value="Tous">Tous</option>
-            {allGenres.map(g => (
-              <option key={g} value={g}>{g}</option>
-            ))}
-          </select>
-          <span className="filter-sep">Pays :</span>
-          <select value={paysFilter} onChange={e => setPaysFilter(e.target.value)}>
-            <option value="Tous">Tous</option>
-            {allPays.map(p => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
-        </div>
-        <div className="filter-row">
-          <span>Durée :</span>
-          <select value={dureeFilter} onChange={e => setDureeFilter(e.target.value)}>
-            <option value="Tous">Tous</option>
-            <option value="court">&lt; 1h40</option>
-            <option value="moyen">1h40 — 2h</option>
-            <option value="long">&gt; 2h</option>
-          </select>
+          <label className="filter-group">
+            Genre :
+            <select value={genreFilter} onChange={e => setGenreFilter(e.target.value)}>
+              <option value="Tous">Tous</option>
+              {allGenres.map(g => (
+                <option key={g} value={g}>{g}</option>
+              ))}
+            </select>
+          </label>
+          <label className="filter-group">
+            Pays :
+            <select value={paysFilter} onChange={e => setPaysFilter(e.target.value)}>
+              <option value="Tous">Tous</option>
+              {allPays.map(p => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
+          </label>
+          <label className="filter-group">
+            Durée :
+            <select value={dureeFilter} onChange={e => setDureeFilter(e.target.value)}>
+              <option value="Tous">Tous</option>
+              <option value="court">&lt; 1h40</option>
+              <option value="moyen">1h40 — 2h</option>
+              <option value="long">&gt; 2h</option>
+            </select>
+          </label>
         </div>
       </header>
       <p className="result-count">{sorted.length} film{sorted.length > 1 ? 's' : ''}</p>
