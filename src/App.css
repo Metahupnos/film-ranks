@@ -262,9 +262,22 @@ header h1 {
 }
 
 .stars {
-  color: #febd01;
   font-size: 0.9rem;
   letter-spacing: 1px;
+  display: inline-flex;
+}
+
+.star.full {
+  color: #febd01;
+}
+
+.star.half {
+  color: #febd01;
+  opacity: 0.45;
+}
+
+.star.empty {
+  color: #444;
 }
 
 .rating-note {

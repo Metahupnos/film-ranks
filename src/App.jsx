@@ -5,11 +5,15 @@ import './App.css'
 function StarRating({ note, max = 5 }) {
   const stars = []
   for (let i = 1; i <= max; i++) {
-    if (i <= Math.floor(note)) stars.push('★')
-    else if (i - note < 1) stars.push('⯪')
-    else stars.push('☆')
+    if (i <= Math.floor(note)) {
+      stars.push(<span key={i} className="star full">★</span>)
+    } else if (i - note < 1) {
+      stars.push(<span key={i} className="star half">★</span>)
+    } else {
+      stars.push(<span key={i} className="star empty">★</span>)
+    }
   }
-  return <span className="stars">{stars.join('')}</span>
+  return <span className="stars">{stars}</span>
 }
 
 function FilmCard({ film, rank, sortBy, onPosterClick }) {
