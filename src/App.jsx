@@ -115,27 +115,21 @@ function App() {
     return true
   })
   const sorted = [...filtered].sort((a, b) => {
-    if (decennie === 'all') {
-      const da = a.date_sortie || ''
-      const db = b.date_sortie || ''
-      return db.localeCompare(da)
-    }
-    if (sortBy === 'tmdb') {
-      const na = a.tmdb_note ?? -1
-      const nb = b.tmdb_note ?? -1
-      return nb - na
-    }
-    const ra = sortBy === 'presse' ? a.rang_presse : a.rang_spectateurs
-    const rb = sortBy === 'presse' ? b.rang_presse : b.rang_spectateurs
-    if (ra == null && rb == null) return 0
-    if (ra == null) return 1
-    if (rb == null) return -1
-    return ra - rb
+    const key = sortBy === 'presse' ? 'presse' : sortBy === 'spectateurs' ? 'spectateurs' : 'tmdb_note'
+    const na = a[key] ?? -1
+    const nb = b[key] ?? -1
+    if (nb !== na) return nb - na
+    // Secondary sort by date
+    return (b.date_sortie || '').localeCompare(a.date_sortie || '')
   })
 
   return (
     <div className="app">
       <header>
+        <a href="https://metahupnos.github.io/" className="avatar-link" target="_blank" rel="noopener noreferrer">
+          <img src={`${import.meta.env.BASE_URL}krissy.jpeg`} alt="Kiki" className="avatar" />
+          <span className="avatar-name">Kiki ©</span>
+        </a>
         <h1>🎬 Film Ranks</h1>
         <p className="subtitle">Classement Allociné — Presse, Spectateurs & TMDB</p>
         <input
@@ -199,7 +193,7 @@ function App() {
       <p className="result-count">{sorted.length} film{sorted.length > 1 ? 's' : ''}</p>
       <main>
         {sorted.map((film, i) => (
-          <FilmCard key={film.title} film={film} rank={i + 1} sortBy={sortBy} onPosterClick={setModalFilm} />
+          <FilmCard key={`${film.title}-${film.decennie}`} film={film} rank={i + 1} sortBy={sortBy} onPosterClick={setModalFilm} />
         ))}
       </main>
       {modalFilm && (
