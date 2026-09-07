@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "update:films": "node scripts/update-films.mjs",
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
