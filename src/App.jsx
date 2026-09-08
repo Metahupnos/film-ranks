@@ -16,7 +16,7 @@ function StarRating({ note, max = 5 }) {
   return <span className="stars">{stars}</span>
 }
 
-function FilmCard({ film, rank, sortBy, onPosterClick }) {
+function FilmCard({ film, onPosterClick }) {
   return (
     <div className="film-card">
       {film.poster && (
@@ -191,8 +191,8 @@ function App() {
       </header>
       <p className="result-count">{sorted.length} film{sorted.length > 1 ? 's' : ''}</p>
       <main>
-        {sorted.map((film, i) => (
-          <FilmCard key={`${film.title}-${film.decennie}`} film={film} rank={i + 1} sortBy={sortBy} onPosterClick={setModalFilm} />
+        {sorted.map(film => (
+          <FilmCard key={`${film.title}-${film.decennie}`} film={film} onPosterClick={setModalFilm} />
         ))}
       </main>
       {modalFilm && (
