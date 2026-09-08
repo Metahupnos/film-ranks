@@ -65,6 +65,46 @@ header h1 {
   margin-bottom: 1.2rem;
 }
 
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.tab {
+  background: #2a2a4a;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 0.45rem 1.4rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background: #3a3a5a;
+}
+
+.tab.active {
+  background: #febd01;
+  color: #1a1a2e;
+  border-color: #febd01;
+  font-weight: 600;
+}
+
+.etat {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  padding: 3rem 0;
+}
+
+.etat.erreur {
+  color: #e74c3c;
+}
+
 .search-bar {
   width: 100%;
   max-width: 500px;
@@ -275,6 +315,39 @@ header h1 {
   margin-bottom: 0.3rem;
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.badge-plateforme {
+  background: #2a2a4a;
+  color: #9ab;
+  border: 1px solid #445;
+}
+
+.badge-statut.statut-live {
+  background: rgba(1, 210, 119, 0.15);
+  color: #01d277;
+  border: 1px solid rgba(1, 210, 119, 0.4);
+}
+
+.badge-statut.statut-fini {
+  background: #2a2a4a;
+  color: #888;
+  border: 1px solid #444;
+}
+
 .ratings {
   display: flex;
   gap: 1.5rem;
@@ -441,6 +514,20 @@ header h1 {
     font-size: 0.85rem;
     padding: 0.5rem 0.8rem;
     margin-bottom: 0.6rem;
+  }
+
+  .tab-bar {
+    margin-bottom: 0.9rem;
+  }
+
+  .tab {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.82rem;
+  }
+
+  .badge {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.45rem;
   }
 
 
